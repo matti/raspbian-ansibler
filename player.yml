@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+
+  tasks:
+    - apt: name=omxplayer state=present
+    - apt: name=python-pip state=present
+
+    - shell: pip install livestreamer
+
+    - copy: src=assets/home/pi/streamer.sh dest=/home/pi/streamer.sh mode=755
+
+    - lineinfile: dest=/etc/rc.local regexp="^sudo -u pi" insertbefore="^exit 0" line="sudo -u pi /home/pi/streamer.sh >/dev/null 2>&1 &"
