@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+
+  tasks:
+    - apt: pkg={{item}} state=present
+      with_items:
+        - omxplayer
+        - python-pip
+
+    - shell: pip install livestreamer
+
+    - copy: src=assets/home/pi/vevostreamer.sh dest=/home/pi/vevostreamer.sh mode=755
+
+    - lineinfile: dest=/etc/rc.local regexp="^sudo -u pi" insertbefore="^exit 0" line="/home/pi/vevostreamer.sh >/home/pi/vevolog.log 2>&1 &"
