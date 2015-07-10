@@ -2,8 +2,10 @@
   become: yes
 
   tasks:
-    - apt: name=omxplayer state=present
-    - apt: name=python-pip state=present
+    - apt: pkg={{item}} state=present
+      with_items:
+        - omxplayer
+        - python-pip
 
     - shell: pip install livestreamer
 
