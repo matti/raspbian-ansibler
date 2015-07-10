@@ -38,3 +38,12 @@ installs ansible to raspbian
     echo "pi         ansible_ssh_port=22        ansible_ssh_user=root" >> hosts
 
     ansible -i hosts -m ping all
+
+## all
+
+    ansible-galaxy install -r requirements.yml
+
+## play
+
+    ansible-playbook site.yml -i hosts_local
+    ansible-playbook site.yml -i hosts
