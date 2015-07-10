@@ -2,7 +2,12 @@
   become: yes
 
   roles:
+    - Stouts.timezone
+    - franklinkim.environment
+    - knopki.locale
     - matti.rpi-pi
+    - matti.ssh
+    - matti.sudoers
   vars:
     timezone_timezone: Europe/Helsinki
     #timezone_dependent_services: [rsyslog, apache2, sendmail]

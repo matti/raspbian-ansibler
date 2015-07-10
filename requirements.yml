@@ -1,17 +1,26 @@
-# - src: Stouts.timezone
-#   path: roles
-#   version: 2.1.0
-#
-# - src: franklinkim.environment
-#   path: roles
-#   version: 1.0.0
-#
+- src: Stouts.timezone
+  path: roles
+  version: 2.1.0
+
+- src: franklinkim.environment
+  path: roles
+  version: 1.0.0
+
+- src: knopki.locale
+  path: roles
+  version: v1.0.3
+
 - src: https://github.com/matti/ansible-rpi-pi
   path: roles
   version: 0.0.1
   name: matti.rpi-pi
-#
-# - src: https://github.com/matti/ansible-ssh
-#   path: roles
-#   version: 0.0.1
-#   name: matti.ssh
+
+- src: https://github.com/matti/ansible-sudoers
+  path: roles
+  version: 0.0.1
+  name: matti.sudoers
+
+- src: https://github.com/matti/ansible-ssh
+  path: roles
+  version: 0.0.2
+  name: matti.ssh

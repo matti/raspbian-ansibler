@@ -1,6 +1,6 @@
 # rasbian-ansibler
 
-installs ansible to raspbian
+installs ansible to raspbian and configures sensible defaults
 
 ## local debian as raspbian
 
