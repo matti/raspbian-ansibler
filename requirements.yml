@@ -10,6 +10,11 @@
   path: roles
   version: v1.0.3
 
+- src: https://github.com/matti/ansible-apt-update-upgrade.git
+  path: roles
+  version: 0.0.1
+  name: matti.apt-update-upgrade
+
 - src: https://github.com/matti/ansible-rpi-pi
   path: roles
   version: 0.0.1
@@ -24,3 +29,13 @@
   path: roles
   version: 0.0.2
   name: matti.ssh
+
+- src: https://github.com/matti/ansible-goodstuff
+  path: roles
+  version: 0.0.1
+  name: matti.goodstuff
+
+- src: https://github.com/matti/ansible-goodstuff-rpi
+  path: roles
+  version: 0.0.2
+  name: matti.goodstuff-rpi

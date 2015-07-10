@@ -2,12 +2,16 @@
   become: yes
 
   roles:
+    - matti.apt-update-upgrade
     - Stouts.timezone
     - franklinkim.environment
     - knopki.locale
     - matti.rpi-pi
     - matti.ssh
     - matti.sudoers
+    - matti.goodstuff
+    - { role: matti.goodstuff-rpi, when: (ansible_architecture == "armv7l" or ansible_architecture == "armv6l") }
+
   vars:
     timezone_timezone: Europe/Helsinki
     #timezone_dependent_services: [rsyslog, apache2, sendmail]
